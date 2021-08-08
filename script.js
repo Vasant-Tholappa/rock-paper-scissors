@@ -1,7 +1,7 @@
 function computerPlay(){
 
-    if(psum >= 5 || csum >= 5)
-    return;
+    // if(psum >= 5 || csum >= 5)
+    // return;
 
     let options = ["Rock","Paper","Scissors"];
 
@@ -14,8 +14,8 @@ function computerPlay(){
 
 function playRound(playerSelection, computerSelection){
 
-    if(psum >= 5 || csum >= 5)
-    return;
+    // if(psum >= 5 || csum >= 5)
+    // return;
     
     if(playerSelection.toUpperCase() === computerSelection.toUpperCase()){
         return -1;
@@ -61,6 +61,8 @@ function playRound(playerSelection, computerSelection){
 let psum = 0;
 let csum = 0;
 
+const status = document.querySelector(".status");
+
 const btns = document.querySelectorAll('.btns');
 
 btns.forEach(btn => {
@@ -72,7 +74,7 @@ btns.forEach(btn => {
                 let pSelect = document.getElementById(btn.id).textContent;
                 let cSelect = computerPlay();
                 
-                const status = document.querySelector(".status");
+                
                 const res = document.createElement('div');
                 res.classList.add('res');
                 
@@ -102,14 +104,9 @@ btns.forEach(btn => {
                     
                 }
 
-                if(csum === 5 && psum === 5)
-                {
-                    // console.log("The match is a draw " + psum + " - " + csum + " !");
-                    res.textContent = "The match is a draw " + psum + " - " + csum + " !";
-                    status.appendChild(res);
-                }
+                
 
-                else if(csum === 5)
+                if(csum === 5)
                 {
                     // console.log("You lost the match " + psum + " - " + csum + " ,nice try tho!");
                     res.textContent = "You lost the match " + psum + " - " + csum + " ,nice try tho!";
